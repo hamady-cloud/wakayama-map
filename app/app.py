@@ -10,9 +10,11 @@ import altair as alt
 # =========================
 st.set_page_config(page_title="和歌山：重点エリア可視化", layout="wide")
 
-DATA_DIR = r"C:\Users\hamada\wakayama-map\app\data"
-GEO_PATH = rf"{DATA_DIR}\areas_wakayama.geojson"
-MET_PATH = rf"{DATA_DIR}\metrics.csv"
+import os
+
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+GEO_PATH = os.path.join(DATA_DIR, "areas_wakayama.geojson")
+MET_PATH = os.path.join(DATA_DIR, "metrics.csv")
 
 # =========================
 # Utils
