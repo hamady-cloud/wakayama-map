@@ -324,6 +324,7 @@ st.markdown("""
 <style>
 .explanation-container {
     background-color: #f0f2f6;
+    color: #31333f;
     padding: 2rem;
     border-radius: 10px;
     margin-top: 2rem;
