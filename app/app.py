@@ -315,6 +315,8 @@ rank = rank.rename(columns=rename_map)
 
 disp_cols = ["順位","市町村コード","市町村名","総合スコア","主因","高齢化率","医療アクセスP50(km)","医療アクセスP90(km)","純移動(千人当たり)"]
 disp_cols = [c for c in disp_cols if c in rank.columns]
+st.dataframe(rank[disp_cols], use_container_width=True, hide_index=True)
+
 st.divider()
 
 # =========================
