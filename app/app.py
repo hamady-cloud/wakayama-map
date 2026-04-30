@@ -37,7 +37,9 @@ def load_metrics(path: str) -> pd.DataFrame:
     for c in df.columns:
         if c in key_cols + keep_first_cols:
             continue
-        df[c] = pd.to_numeric(df[c], errors="ignore")
+        converted = pd.to_numeric(df[c], errors="coerce")
+        if converted.notna().any():
+            df[c] = converted
 
     agg = {}
     for c in df.columns:
